@@ -1,0 +1,9 @@
+$kind: collection
+name: Baseball API
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+  - key: playerId
+    value: ''
+  - key: statId
+    value: ''

@@ -16,7 +16,8 @@ INSERT INTO players (first_name, last_name, position, team, age) VALUES
 ('Mike', 'Yastrzemski', 'LF', 'Braves', '35'),
 ('Michael', 'Harris II', 'CF', 'Braves', '25'),
 ('Ronald', 'Acuna Jr.', '3B', 'Braves', '28'),
-('Dominic', 'Smith', 'DH', 'Braves', '31');
+('Dominic', 'Smith', 'DH', 'Braves', '31'),
+('Keibert', 'Ruiz', 'C', 'Nationals', '27');
 
 
 INSERT INTO career_stats (player_id, season_year, stat_name, stat_value) VALUES
@@ -74,13 +75,7 @@ INSERT INTO career_stats (player_id, season_year, stat_name, stat_value) VALUES
 (9, 2026, 'home_runs', 16),
 (9, 2026, 'stolen_bases', 0),
 
--- Kyle Schwarber (player_id = 10)
-(10, 2026, 'batting_avg', .227),
-(10, 2026, 'rbis', 27),
-(10, 2026, 'home_runs', 16),
-(10, 2026, 'stolen_bases', 0),
-
--- Drake Baldwin (player_id = 11)
+-- Drake Baldwin (player_id = 10)
 (11, 2026, 'batting_avg', .250),
 (11, 2026, 'rbis', 5),
 (11, 2026, 'home_runs', 0),
@@ -132,5 +127,11 @@ INSERT INTO career_stats (player_id, season_year, stat_name, stat_value) VALUES
 (19, 2026, 'batting_avg', .250),
 (19, 2026, 'rbis', 18),
 (19, 2026, 'home_runs', 7),
-(19, 2026, 'stolen_bases', 0);
+(19, 2026, 'stolen_bases', 0),
+
+-- Keibert Ruiz (player_id = 20)
+(20, 2026, 'batting_avg', .205),
+(20, 2026, 'rbis', 13),
+(20, 2026, 'home_runs', 2),
+(20, 2026, 'stolen_bases', 0);
 

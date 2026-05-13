@@ -1,0 +1,27 @@
+$kind: http-request
+method: POST
+url: '{{baseUrl}}/players/{{playerId}}/stats'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "season": 1927,
+      "battingAverage": 0.356,
+      "homeRuns": 60,
+      "rbi": 164
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test('Status code is 200', function () {
+          pm.response.to.have.status(200);
+      });
+      pm.test('Response has id field', function () {
+          pm.expect(pm.response.json()).to.have.property('id');
+      });
+      pm.collectionVariables.set('statId', pm.response.json().id);

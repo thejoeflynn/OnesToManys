@@ -1,0 +1,16 @@
+$kind: http-request
+method: PUT
+url: '{{baseUrl}}/players/{{playerId}}/stats/{{statId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "season": 1927,
+      "battingAverage": 0.356,
+      "homeRuns": 60,
+      "rbi": 164
+    }
