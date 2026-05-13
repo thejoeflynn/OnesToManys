@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Stats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- Left sidebar: player list -->
+        <div id="sidebar">
+            <h2>Players</h2>
+            <button id="add-player-btn">+ Add Player</button>
+            <ul id="player-list"></ul>
+        </div>
+
+        <!-- Right side: player detail and stats -->
+        <div id="main">
+            <div id="player-detail">
+                <p class="placeholder">Select a player to view their stats.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal for adding/editing a player -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <h3 id="modal-title">Add Player</h3>
+            <form id="player-form">
+                <input type="text" id="input-firstName" placeholder="First Name" required>
+                <input type="text" id="input-lastName" placeholder="Last Name" required>
+                <input type="text" id="input-position" placeholder="Position (e.g. CF)">
+                <input type="text" id="input-team" placeholder="Team">
+                <input type="number" id="input-age" placeholder="Age">
+                <div id="form-buttons">
+                    <button type="submit">Save</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for adding a stat -->
+    <div id="stat-modal" class="hidden">
+        <div id="modal-content">
+            <h3>Add Stat</h3>
+            <form id="stat-form">
+                <input type="number" id="input-seasonYear" placeholder="Season Year (e.g. 2026)" required>
+                <input type="text" id="input-statName" placeholder="Stat Name (e.g. home_runs)" required>
+                <input type="number" id="input-statValue" placeholder="Value (e.g. 12)" step="0.001" required>
+                <div id="form-buttons">
+                    <button type="submit">Save</button>
+                    <button type="button" id="cancel-stat-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
