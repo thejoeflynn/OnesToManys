@@ -1,33 +1,30 @@
 import { useState, useEffect } from 'react';
 import PlayerList from './PlayerList';
 import PlayerDetail from './PlayerDetail';
+import EditPlayerModal from './EditPlayerModal';
 import './App.css';
 
 const API_URL = 'http://localhost:8080';
 
 function App() {
-  // useState creates a piece of data that React watches.
-  // When it changes, React automatically re-renders the parts of the page that use it.
-  const [players, setPlayers] = useState([]);         // list of all players
-  const [selectedId, setSelectedId] = useState(null); // ID of the selected player
-  const [player, setPlayer] = useState(null);         // full data of selected player
-  const [stats, setStats] = useState([]);             // stats for selected player
+  const [players, setPlayers] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
+  const [player, setPlayer] = useState(null);
+  const [stats, setStats] = useState([]);
 
-  // useEffect runs code after the component renders.
-  // The empty [] at the end means "only run this once, when the page first loads."
+  // Controls whether the edit modal is visible
+  const [showEditModal, setShowEditModal] = useState(false);
+
   useEffect(() => {
     loadPlayers();
   }, []);
 
-  // Fetch all players from the API and store them in state
   async function loadPlayers() {
     const res = await fetch(`${API_URL}/players`);
     const data = await res.json();
     setPlayers(data);
   }
 
-  // Called when a player is clicked in the sidebar.
-  // Fetches that player's details and stats.
   async function handleSelectPlayer(id) {
     setSelectedId(id);
 
@@ -43,7 +40,6 @@ function App() {
     setStats(statsData);
   }
 
-  // Delete a player, then clear the detail panel and reload the list
   async function handleDeletePlayer(id) {
     if (!window.confirm('Are you sure you want to delete this player?')) return;
 
@@ -55,7 +51,6 @@ function App() {
     loadPlayers();
   }
 
-  // Delete a stat entry, then reload the stats for the current player
   async function handleDeleteStat(statId) {
     await fetch(`${API_URL}/players/${selectedId}/stats/${statId}`, { method: 'DELETE' });
 
@@ -64,9 +59,27 @@ function App() {
     setStats(data);
   }
 
+  // Opens the edit modal
+  function handleEditPlayer() {
+    setShowEditModal(true);
+  }
+
+  // Called when the edit form is submitted.
+  // Sends a PUT request to update the player, then refreshes the detail view.
+  async function handleSaveEdit(updatedData) {
+    await fetch(`${API_URL}/players/${selectedId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedData)
+    });
+
+    setShowEditModal(false);
+    handleSelectPlayer(selectedId); // refresh the detail panel
+    loadPlayers();                  // refresh the sidebar
+  }
+
   return (
     <div id="app">
-      {/* Pass data and functions down to child components as props */}
       <PlayerList
         players={players}
         onSelect={handleSelectPlayer}
@@ -77,7 +90,17 @@ function App() {
         stats={stats}
         onDelete={handleDeletePlayer}
         onDeleteStat={handleDeleteStat}
+        onEdit={handleEditPlayer}
       />
+
+      {/* Only render the modal when showEditModal is true */}
+      {showEditModal && (
+        <EditPlayerModal
+          player={player}
+          onSave={handleSaveEdit}
+          onClose={() => setShowEditModal(false)}
+        />
+      )}
     </div>
   );
 }

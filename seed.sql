@@ -135,3 +135,44 @@ INSERT INTO career_stats (player_id, season_year, stat_name, stat_value) VALUES
 (20, 2026, 'home_runs', 2),
 (20, 2026, 'stolen_bases', 0);
 
+-- 2025 Stats
+INSERT INTO career_stats (player_id, season_year, stat_name, stat_value) VALUES
+-- JT Realmuto
+(1, 2025, 'batting_avg', .254), (1, 2025, 'rbis', 55), (1, 2025, 'home_runs', 18), (1, 2025, 'stolen_bases', 12),
+-- Bryce Harper
+(2, 2025, 'batting_avg', .298), (2, 2025, 'rbis', 94), (2, 2025, 'home_runs', 29), (2, 2025, 'stolen_bases', 4),
+-- Bryson Stott
+(3, 2025, 'batting_avg', .247), (3, 2025, 'rbis', 52), (3, 2025, 'home_runs', 11), (3, 2025, 'stolen_bases', 14),
+-- Trea Turner
+(4, 2025, 'batting_avg', .261), (4, 2025, 'rbis', 72), (4, 2025, 'home_runs', 20), (4, 2025, 'stolen_bases', 26),
+-- Alec Bohm
+(5, 2025, 'batting_avg', .272), (5, 2025, 'rbis', 85), (5, 2025, 'home_runs', 18), (5, 2025, 'stolen_bases', 2),
+-- Brandon Marsh
+(6, 2025, 'batting_avg', .241), (6, 2025, 'rbis', 58), (6, 2025, 'home_runs', 14), (6, 2025, 'stolen_bases', 11),
+-- Justin Crawford
+(7, 2025, 'batting_avg', .251), (7, 2025, 'rbis', 38), (7, 2025, 'home_runs', 5), (7, 2025, 'stolen_bases', 18),
+-- Adolis Garcia
+(8, 2025, 'batting_avg', .237), (8, 2025, 'rbis', 67), (8, 2025, 'home_runs', 22), (8, 2025, 'stolen_bases', 8),
+-- Kyle Schwarber
+(9, 2025, 'batting_avg', .235), (9, 2025, 'rbis', 86), (9, 2025, 'home_runs', 38), (9, 2025, 'stolen_bases', 3),
+-- Drake Baldwin
+(10, 2025, 'batting_avg', .242), (10, 2025, 'rbis', 32), (10, 2025, 'home_runs', 8), (10, 2025, 'stolen_bases', 2),
+-- Matt Olson
+(11, 2025, 'batting_avg', .241), (11, 2025, 'rbis', 93), (11, 2025, 'home_runs', 35), (11, 2025, 'stolen_bases', 1),
+-- Ozzie Albies
+(12, 2025, 'batting_avg', .248), (12, 2025, 'rbis', 71), (12, 2025, 'home_runs', 22), (12, 2025, 'stolen_bases', 15),
+-- Mauricio Dubon
+(13, 2025, 'batting_avg', .235), (13, 2025, 'rbis', 38), (13, 2025, 'home_runs', 7), (13, 2025, 'stolen_bases', 8),
+-- Austin Riley
+(14, 2025, 'batting_avg', .258), (14, 2025, 'rbis', 88), (14, 2025, 'home_runs', 28), (14, 2025, 'stolen_bases', 3),
+-- Mike Yastrzemski
+(15, 2025, 'batting_avg', .229), (15, 2025, 'rbis', 48), (15, 2025, 'home_runs', 14), (15, 2025, 'stolen_bases', 5),
+-- Michael Harris II
+(16, 2025, 'batting_avg', .268), (16, 2025, 'rbis', 62), (16, 2025, 'home_runs', 18), (16, 2025, 'stolen_bases', 22),
+-- Ronald Acuna Jr.
+(17, 2025, 'batting_avg', .294), (17, 2025, 'rbis', 82), (17, 2025, 'home_runs', 28), (17, 2025, 'stolen_bases', 45),
+-- Dominic Smith
+(18, 2025, 'batting_avg', .242), (18, 2025, 'rbis', 52), (18, 2025, 'home_runs', 14), (18, 2025, 'stolen_bases', 1),
+-- Keibert Ruiz
+(19, 2025, 'batting_avg', .218), (19, 2025, 'rbis', 48), (19, 2025, 'home_runs', 9), (19, 2025, 'stolen_bases', 1);
+
